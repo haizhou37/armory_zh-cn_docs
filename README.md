@@ -12,7 +12,8 @@ Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be 
 
 ### Get Started
 
-<div style="width:50%">![](/getting_started/img/templ.jpg)</div>
+![](/getting_started/img/templ.jpg)
+<div style="width:50%"></div>
 
 - [Download SDK](http://armory3d.org/download.html)
 - [Setup](/getting_started/setup.md)
@@ -21,7 +22,8 @@ Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be 
 
 ### Essentials
 
-<div style="width:50%">![](/getting_started/img/essen.jpg)</div>
+![](/getting_started/img/essen.jpg)
+<div style="width:50%"></div>
 
 - [Game Templates](https://github.com/armory3d/armory_templates/releases)
 - [Archviz Templates](https://github.com/armory3d/archviz_templates/releases)
@@ -31,6 +33,7 @@ Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be 
 - [Material Vault](https://github.com/armory3d/material_vault)
 
 ### License
+
 Armory is distributed under [zlib license](https://github.com/armory3d/armory/blob/master/LICENSE.md). This means Armory is free to use for any purposes, including development of proprietary closed-source software and selling copies of your work. 
 
 ### Contributing
