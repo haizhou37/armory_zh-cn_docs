@@ -31,9 +31,7 @@ Armory SDK 能被运行在 **Windows**, **Linux** 和 **macOS**。项目可以�
 - [材质库](https://github.com/armory3d/material_vault)
 
 ### 许可
-
 Armory是根据zlib许可证分发的 [zlib license](https://github.com/armory3d/armory/blob/master/LICENSE.md)。这意味着军械库可以用于任何用途，包括开发专有的封闭源代码软件和销售您的作品副本。
 
 ### 贡献
-
 任何形式的贡献都是非常欢迎的！请看一下目前打开的 [issues](https://github.com/armory3d/armory/issues).
