@@ -1,6 +1,6 @@
 # 欢迎
 
-![](getting_started/img/intro.jpg)
+！[](getting_started/img/intro.jpg)
 
 在Blender中创建游戏 - Armory（军械库）是一个在完整Blender中集成的游戏引擎，它成为了一个完整的游戏开发工具。
 
