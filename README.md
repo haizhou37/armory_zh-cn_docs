@@ -11,7 +11,6 @@ Build games in Blender - Armory is a game engine with full Blender integration, 
 Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be deployed to desktop, web, mobile and consoles.
 
 ### Get Started
-
 ![](/getting_started/img/templ.jpg)
 <div style="width:50%"></div>
 
@@ -21,7 +20,6 @@ Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be 
 - [Tanks Tutorial](/getting_started/tanks.md)
 
 ### Essentials
-
 ![](/getting_started/img/essen.jpg)
 <div style="width:50%"></div>
 
@@ -33,9 +31,7 @@ Armory SDK can be used on **Windows**, **Linux** and **macOS**. Projects can be 
 - [Material Vault](https://github.com/armory3d/material_vault)
 
 ### License
-
 Armory is distributed under [zlib license](https://github.com/armory3d/armory/blob/master/LICENSE.md). This means Armory is free to use for any purposes, including development of proprietary closed-source software and selling copies of your work. 
 
 ### Contributing
-
 Any form of contribution is highly welcome! Please take a look at currently opened [issues](https://github.com/armory3d/armory/issues).
