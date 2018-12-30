@@ -23,8 +23,8 @@ Armory SDK 能被运行在 **Windows**, **Linux** 和 **macOS**。项目可以�
 ![](/getting_started/img/essen.jpg)
 <div style="width:50%"></div>
 
-- [游戏](https://github.com/armory3d/armory_templates/releases)
-- [建筑](https://github.com/armory3d/archviz_templates/releases)
+- [游戏模板](https://github.com/armory3d/armory_templates/releases)
+- [场景模板](https://github.com/armory3d/archviz_templates/releases)
 - [示例](https://github.com/armory3d/armory_examples/releases)
 - [全局照明](/graphics/global_illumination)
 - [像素世界](https://github.com/armory3d/voxel_world)
