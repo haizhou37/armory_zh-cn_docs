@@ -11,7 +11,7 @@
 Armory SDK 能被运行在 **Windows**, **Linux** 和 **macOS**。项目可以部署到桌面、网页、移动端和控制台上。
 
 ### 入门
-
+[](getting_started/img/templ.jpg)
 <div style="width:50%">![](getting_started/img/templ.jpg)</div>
 
 - [下载 SDK](http://armory3d.org/download.html)
