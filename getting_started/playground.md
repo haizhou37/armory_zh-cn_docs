@@ -41,13 +41,13 @@ Blender有多种修改器，它们对活动物体应用程序效果。选择立�
 
 ### 材质
 
-选择立方体并切换到`节点编辑器`。转到`着色器节点`并启用`使用节点`。现在，您可以使用默认的`Diffuse BSDF`节点来调整材质的颜色和粗糙度。
+选择立方体并切换到`节点编辑器`。转到`着色器节点`并启用`使用节点`。现在，您可以使用默认的`漫射BSDF`节点来调整材质的颜色和粗糙度。
 
 <a href="./getting_started/img/playground/2.jpg">![](/getting_started/img/playground/2.jpg)</a>
 
 接下来，切换回`3D视图`然后选择平面。我们想在上面加个纹理。按下`Tab`进入编辑模式，按`空格`并搜索`展开`给平面创建UV坐标图。
 
-在`材质`选项卡中，创建一个新材质。切换到节点编辑器，就像我们以前做的那样。选择`Diffuse BSDF`节点并按`X`删除它。在标题中，按`添加 - 群组 - Armory PBR` 放在画布上。连接`面`端口到`材质输出`节点。若要获得最佳结果，在Armory中使用材质时请使用`Armory PBR`节点。
+在`材质`选项卡中，创建一个新材质。切换到节点编辑器，就像我们以前做的那样。选择`漫射BSDF`节点并按`X`删除它。在标题中，按`添加 - 群组 - Armory PBR` 放在画布上。连接`面`端口到`材质输出`节点。若要获得最佳结果，在Armory中使用材质时请使用`Armory PBR`节点。
 
 ![](/getting_started/img/playground/grid_base.png)
 ![](/getting_started/img/playground/grid_rough.png)
