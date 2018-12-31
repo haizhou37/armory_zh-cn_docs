@@ -35,13 +35,13 @@
 
 ### 修改器
 
-Blender搅拌器有多种修改器，它们对活动物体应用程序效果。选择立方体，导航到`修改器`选项卡并 `倒角`修改器，使立方体边缘看起来更光滑。
+Blender有多种修改器，它们对活动物体应用程序效果。选择立方体，导航到`修改器`选项卡并`倒角`修改器，使立方体边缘看起来更光滑。
 
 <a href="./getting_started/img/playground/1b.jpg">![](/getting_started/img/playground/1b.jpg)</a>
 
 ### 材质
 
-选择立方体并切换到`节点编辑器`。转到`着色器节点`并启用`使用节点`。 现在，您可以使用默认的`Diffuse BSDF`节点来调整材质的颜色和粗糙度。
+选择立方体并切换到`节点编辑器`。转到`着色器节点`并启用`使用节点`。现在，您可以使用默认的`Diffuse BSDF`节点来调整材质的颜色和粗糙度。
 
 <a href="./getting_started/img/playground/2.jpg">![](/getting_started/img/playground/2.jpg)</a>
 
