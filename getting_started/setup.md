@@ -3,8 +3,8 @@
 Armory附带了你所需要的一切。
 
 - [下载SDK](http://armory3d.org/download.html).
-- 解压`Armory_version.zip`到你喜欢的地方*（在Windows环境下，倾向选择一条较短的路径，如`C:\Dev`或者解压[7-zip](http://www.7-zip.org)防止长路径错误并加快提取速度。）*
-- 运行位于解压SDK中的Blender*（在Windows上，您可能需要在第一次运行时单击**更多信息** - **始终运行**。在Linux上，解压文件夹并打开终端并输入 `./blender`。在macOS上，查看`instructions.txt`文件。）*
+- 解压`Armory_version.zip`到你喜欢的地方。*（在Windows环境下，倾向选择一条较短的路径，如`C:\Dev`或者解压[7-zip](http://www.7-zip.org)防止长路径错误并加快提取速度。）*
+- 运行位于解压SDK中的Blender。*（在Windows上，您可能需要在第一次运行时单击**更多信息** - **始终运行**。在Linux上，解压文件夹并打开终端并输入 `./blender`。在macOS上，查看`instructions.txt`文件。）*
 
 <div style="width:50%">![](/getting_started/img/winrun.png)</div>
 
@@ -14,7 +14,7 @@ Armory附带了你所需要的一切。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4FPKCUYjpP0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## 故障检修
+## 问题排查
 
 - 对于旧显卡，请在`Blender - 属性 - 渲染 - Armory渲染路径`中选择`低`预设。
 - 在命名事物时，倾向不重音的字母`A-Z。
