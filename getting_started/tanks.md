@@ -1,21 +1,19 @@
-# Tanks Game
+# 坦克游戏
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5b97eR5_fQI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Let's build a mini-game! It will consist of 2 players handling a tank and battling each other. We build a small playground with obstacles and two tanks models. Each object has a rigid body set. Some of the obstacles are animated on the timeline to make the game more dynamic. The lighting setup is based on the [Playground tutorial](/getting_started/playground.md).
+我们来做个小游戏吧！它将包括2名玩家操纵坦克并且互相战斗。我们建造了一个有障碍物和两辆坦克模型的小操场。每个物体都有一个刚体。一些障碍是动画的时间线，以使游戏更有活力。照明设置基于[场景教程](/getting_started/playground.md).
 
 ![](/getting_started/img/tanks/1.jpg)
 
-Red tank acts as a player 1. We allow both keyboard and gamepad controls, but hard-code the actual keys used for simplicity. In a **Player1Controls** tree, the left key on keyboard or gamepad is set to send an event named **'turn_left'**. Later on, we use this event to rotate the player controlled tank.
-
+红色坦克充当玩家1。我们允许键盘和游戏手柄控制，但为了简单起见对实际使用的键位采用硬编码。在**Player1Controls**节点树中, 键盘或游戏手柄上的左键被设置发送名为 **'turn_left'** 的事件。稍后，我们使用这个事件来旋转玩家控制的坦克。
 ![](/getting_started/img/tanks/2.jpg)
 
-Do this for all keys - left, right, forward and backward.
+对所有的键位做同样的事 - 左，右，向前和向后。
 
 ![](/getting_started/img/tanks/3.jpg)
 
-Blue tank acts as a player 2. We define the same controls, but map the keys to WSAD and the second connected gamepad instead.
-
+蓝色坦克充当玩家2。我们定义相同的控制，但是将键位映射到WSAD和第二个连接的游戏手柄。
 In a **TankTree**, we listen to the events and perform actions to actually control the tank. The reason this node tree is separate is that we attach it to both tanks, preventing duplicated node trees.
 
 **On Event** node is set to listen to the **'turn_left'** event. For player 1, this event is triggered when left key is pressed. For player 2, it happens on the A key press. **On Event** node is connected to the **Rotate Object** node, with **Vector Z** value set to a small positive value controlling the rotation speed. Playing the game now, pressing the left key rotates the tank! 
