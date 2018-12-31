@@ -4,7 +4,7 @@
 
 本教程向您介绍Armory基础知识。我们将创建一个像游乐场一样的场景，逐步展示基本的功能。我们走吧。
 
-- 获取本教程的[.blend文件](https://github.com/armory3d/armory_tutorials/releases)。
+- 获取本教程的[.blend](https://github.com/armory3d/armory_tutorials/releases)文件。
 
 ### 你好，世界
 
