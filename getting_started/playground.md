@@ -1,140 +1,140 @@
-# Playground Tutorial
+# 场景教程
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H5ylSfTfNg8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-This tutorial walks you through the Armory basics. We will create a playground-like scene showcasing the essential features step-by-step. Let's go!
+本教程向您介绍Armory基础知识。我们将创建一个像游乐场一样的场景，逐步展示基本的功能。我们走吧。
 
-- Get the [.blend file](https://github.com/armory3d/armory_tutorials/releases) for this tutorial.
+- 获取本教程的[.blend文件](https://github.com/armory3d/armory_tutorials/releases)。
 
-### Hello World
+### 你好，世界
 
-Pick-up where we left in the [setup tutorial](/getting_started/setup.md). Open Blender, save the project and select `Cycles Render` or `Eevee` engine in the header. Press `Armory Player - Run (F5)` to play in window.
+紧接着我们在 [安装教程](/getting_started/setup.md)中剩下的部分。打开Blender，保存项目并在 `属性 - 渲染`面板中选择`Cycles`或`Eevee`渲染引擎。按下`Armory播放器 - 运行（F5）`预览项目。
 
-You can select a runtime in the `Armory Player` panel:
-- Select `Krom` to quickly play the scene.
-- Select `Browser` for HTML5 deploy.
-- Select `C++` for native deploy (C++ compiler required). 
+你能`Armory播放器`面板选择运行环境：
+- 选择`Krom`快速运行场景。
+- 选择`浏览器`部署HTML5网页。
+- 选择`C++`部署原生项目(要求C++编译器)。
 
-You can also select camera mode in the `Armory Player` panel:
-- Select `Scene` to start the game from the point of active scene camera.
-- Select `Viewport` to start the game from the viewport view. This is useful for quick scene preview as it also lets you control the camera. Try it out!
-- Press `Shift + F` in 3D View to navigate around the scene.
+你也能在`Armory播放器`面板选择相机模式：
+- 选择`场景`从活动场景摄像机的角度开始游戏。
+- 选择`视口`从视口视图开始游戏。这是有用的快速场景预览，因为它也可以让你控制相机。试试看！
+- 按下`Shift + F`在3D视图中浏览场景。
 
-Additionally, you can tweak the `Dimensions - Resolution` for window size. To run in fullscreen, select `Armory Project - Window Mode - Fullscreen`.
+此外，您还可以在`尺寸 - 分辨率`调整窗口大小。若要在全屏运行，请选择`Armory项目 - 窗口模式 - 全屏`。
 
 <a href="./getting_started/img/playground/1.jpg">![](/getting_started/img/playground/1.jpg)</a>
 
-### Objects
+### 物体
 
-We will start with some Blender basics on how to manipulate scene objects:
+我们将从一些关于如何操作场景对象的Blender基础知识开始（部分操作在Blender2.8版本之前默认有效）：
 
-- In 3D View, hit `Space` and type `Add Plane` to create a plane object (or do `Add - Mesh - Plane` from the 3D View header).
-- Press `S` to scale up the plane, `R` to rotate, or `G` to grab and translate.
-- Select objects with `right-click`.
-- Delete objects by pressing `X`.
+- 在3D视图中，按下`空格`并搜索`添加平面`创建平面对象(或者在3D视图标题栏点击`添加 - 网格 - 平面`)。
+- 按`S`缩放平面，`R`旋转，或者`G`移动和变换。
+- `右键点击`选择物体。
+- 删除物体按`X`。
 
-### Modifiers
+### 修改器
 
-Blender has a variety of modifiers which apply procedural effects on the active object. Select Cube, navigate to the `Modifiers` tab and add `Bevel` modifier to make the cube edges look polished.
+Blender搅拌器有多种修改器，它们对活动物体应用程序效果。选择立方体，导航到`修改器`选项卡并 `倒角`修改器，使立方体边缘看起来更光滑。
 
 <a href="./getting_started/img/playground/1b.jpg">![](/getting_started/img/playground/1b.jpg)</a>
 
-### Materials
+### 材质
 
-Select Cube and switch to `Node Editor`. Go to `Shader Nodes` and enable `Use Nodes`. Now you can tweak the material color and roughness using the default `Diffuse BSDF` node.
+选择立方体并切换到`节点编辑器`。转到`着色器节点`并启用`使用节点`。 现在，您可以使用默认的`Diffuse BSDF`节点来调整材质的颜色和粗糙度。
 
 <a href="./getting_started/img/playground/2.jpg">![](/getting_started/img/playground/2.jpg)</a>
 
-Next, switch back to `3D View` and select Plane. We want to put a texture on it. Press `Tab` to enter edit mode, hit `Space` and type `Unwrap` to create UV coords for the plane.
+接下来，切换回`3D视图`然后选择平面。我们想在上面加个纹理。按下`Tab`进入编辑模式，按`空格`并搜索`展开`给平面创建UV坐标图。
 
-In Material tab, create a new material. Switch to Node Editor like we did before. Select `Diffuse BSDF` node and press `X` to delete it. In header, press `Add - Group - Armory PBR` and place in on the canvas. Connect the `Surface` socket to the `Material Output` node. For best results, prefer to use the `Armory PBR` node when working with materials in Armory.
+在`材质`选项卡中，创建一个新材质。切换到节点编辑器，就像我们以前做的那样。选择`Diffuse BSDF`节点并按`X`删除它。在标题中，按`添加 - 群组 - Armory PBR` 放在画布上。连接`面`端口到`材质输出`节点。若要获得最佳结果，在Armory中使用材质时请使用`Armory PBR`节点。
 
 ![](/getting_started/img/playground/grid_base.png)
 ![](/getting_started/img/playground/grid_rough.png)
 
-Save the images above and simply drag-and-drop the files onto the node canvas in Blender. Connect the `Image Texture` nodes to the `Base Color` and `Roughness` sockets.
+保存上面的图像，只需将文件拖放到Blender中的节点画布上。将`图像纹理`节点连接到`基础颜色`和`粗糙度`端口。
 
 <a href="./getting_started/img/playground/3.jpg">![](/getting_started/img/playground/3.jpg)</a>
 
-Following these steps, a basic scene is already shaping up. Hit `F5` to play the scene in Armory!
+按照这些步骤，一个基本的场景已经形成。按下`F5`在Armory中播放场景！
 
 <a href="./getting_started/img/playground/5.jpg">![](/getting_started/img/playground/5.jpg)</a>
 
-### Animation
+### 动画
 
-Let's create an animation rotating the cube. Locate the `Timeline` and go to frame 1. Select Cube and press `I - Rotation` to insert keyframes for the rotation. Next, go to frame 60 in the timeline. With Cube selected, press `R` to rotate it desired amount and press `I - Rotation` again.
+让我们创建一个旋转立方体的动画。找到`时间线`并进入第1帧。选择立方体并按下`I - 旋转`插入旋转的关键帧。接下来，进入时间线中的第60帧。选择立方体后，按下 `R`旋转它所需的数值并再一次按`I - 旋转`。
 
 <a href="./getting_started/img/playground/6.jpg">![](/getting_started/img/playground/6.jpg)</a>
 
-### Lights
+### 光照
 
-Select lamp object from hierarchy and switch to `Data` tab. You can set the lamp type and tweak the lamp color and strength.
+从大纲视图中选择灯光物体并切换到`物体数据`选项卡。您可以设置灯光类型和调整灯的颜色和强度。
 
 <a href="./getting_started/img/playground/9.jpg">![](/getting_started/img/playground/9.jpg)</a>
 
-### Environment
+### 环境
 
-World nodes are used to setup the environment. Switch to `Node Editor - World Nodes` to access the nodes. In this tutorial, we use `Sky Texture` node to render procedural sky. If we were to add an environment map, we would use the `Environment Texture` node with `.hdr` file.
+世界节点用于设置环境。切换到`节点编辑器 - 世界节点`去获取节点。在本教程中，我们使用`天空纹理`节点来渲染程序化天空。如果我们要添加一个环境映射，我们将使用带有`.hdr`文件的`环境纹理`节点.
 
 <a href="./getting_started/img/playground/10.jpg">![](/getting_started/img/playground/10.jpg)</a>
 
-### Physics
+### 物理
 
-With object selected, navigate to the `Physics` tab and press the `Rigid Body` button. Set desired shape representing the object in the `Rigid Body Collision` panel.
+选择对象后，导航到`物理`选项卡并按下`刚体`按钮。 在`刚体碰撞`面板设置表示对象的所需形状。
 
-In the `Rigid Body` panel, set object mass and type:
-- Select `Active` for objects which are freely affected by physics.
-- Select `Passive` for objects which are animated on the timeline.
+在`刚体`面板中设置质量和类型：
+- 选择`活动项`用于被物理影响的物体。
+- 选择`被动`用于在时间线上动画的对象。
 
 <a href="./getting_started/img/playground/11.jpg">![](/getting_started/img/playground/11.jpg)</a>
 
-### Asset Import
+### 导入资源
 
-With Blender, we can easily import common asset formats.
-- Select `File - Import` to import file formats.
-- Select `File - Append` to import objects from other .blend files.
-- Select `File - Link` to link objects from other .blend files.
+使用Blender，我们可以很容易地导入常见的资源格式。
+- 选择`文件 - 导入`导入文件格式。
+- 选择`文件 - 附加` 从其它的`.blend`文件中导入物体。
+- 选择`文件 - 链接` 从其它的`.blend`文件中链接物体。
 
-In this tutorial, we are using an animated `.fbx` model from [mixamo](http://mixamo.com), imported using the `File - Import` option.
+在本教程中，我们使用了一个来自 [mixamo](http://mixamo.com)的`.fbx` 动画模型， 用`文件 - 导入`选项导入它。
 
 <a href="./getting_started/img/playground/8.jpg">![](/getting_started/img/playground/8.jpg)</a>
 
-### Logic Nodes
+### 逻辑节点
 
-Logic nodes provide a visual way of creating interactive scenes. When you build your project, created node trees are automatically compiled down to scripts.
+逻辑节点提供了一种创建交互式场景的可视化方法。生成项目时，创建的节点树将自动编译为脚本。
 
-The system consists of 5 essential categories:
-- `Events` - nodes where execution starts, triggered by desired event
-- `Actions` - once an event is triggered, these nodes take action
-- `Logic` - nodes used to control execution flow, using branching, loops, gates..
-- `Variables` - nodes used to store data in a logic tree
-- `Values` - nodes used to retrieve data from other objects
+该系统由五个基本类别组成：
+- `事件` - 执行开始的节点，由所需事件触发。
+- `动作` - 一旦事件被触发，这些节点就会采取行动。
+- `逻辑` - 用于控制执行流的节点，使用分支、循环、门等等。
+- `变量` - 用于在逻辑树中存储数据的节点。
+- `值` - 用于从其他对象检索数据的节点。
 
-We will animate the Cylinder procedurally using logic nodes. Switch to `Node Editor` area and select `Logic` nodes. Press `New` to create a new node tree.
+我们将使用逻辑节点对圆柱体添加动画。切换到`节点编辑器` 区域并选择`逻辑`节点。按下`新建`创建一个新的节点树。
 
-You can browse all available nodes through `Add` menu item, or simply hit `Shift + A` to start searching.
+您可以通过`添加`菜单项浏览所有可用的节点或者简单地按下`Shift + A`进行搜索。
 
-- Search for `On Update` node and place it. This is an action node which gets called each frame.
-- Connect it to the `Set Location` node.
-- Add a `Vector` node and connect it to the `Set Location` node. Each frame, Cylinder location will be set to this vector.
-- For the `X` location, add `Math` node and set it to `Sine`.
-- Add `Time` node to drive the sine node.
-- Add another `Math` node, scaling the sine output.
-- We will keep the `Y` and `Z` location unchanged.
+- 搜索`每帧更新`节点并放置它。这是一个事件节点，每帧都会被调用。
+- 连接到`设置位置`节点。
+- 添加`向量`节点并连接到`设置位置`节点。每一帧，圆柱体位置会被设置成这个向量。
+- 对于`X`位置，添加`数学`节点并设置成`正弦`。
+- 添加`时间`节点来控制`正弦`节点。
+- 添加`数学`节点来缩放正弦输出。
+- 我们会保持`Y`和`Z`的位置不变。
 
-Each node tree has to be attached to an object. Select Cylinder and create new trait in `Properties - Object - Armory Traits`. Set type to `Nodes` and enter our newly created node tree as `Tree` entry.
+每个节点树都必须附加到一个对象上。选择圆柱体并在`属性 - 物体 - Armory特性`中新建特性。将类型设置为`节点`并将新创建的节点树选择至`树`属性。
 
 <a href="./getting_started/img/playground/12.jpg">![](/getting_started/img/playground/12.jpg)</a>
 
-Note: To see the output of `Print` node, enable `Armory Project - Debug Console`.
+注意：要查看`打印`节点的输出,要开启`Armory项目 - 调试控制台`。
 
-### Haxe Scripts
+### Haxe脚本
 
-We can program the object traits directly using the `Haxe` programming language. Let's create a trait which spawns a box after pressing a key.
+我们可以使用`Haxe`脚本语言直接编程物体特性。让我们创建一个特性，在按下键后产生一个盒子。
 
-Create an empty object in the scene (`Space - Add Empty`). The location of this object will serve as the spawning point. Create a new trait in `Properties - Object - Armory Traits`. Set type to `Haxe` and press the `New Script` button.
+在场景中创建一个空对象（`空格 - 添加空物体`）。这个物体的位置将作为生成点。在`属性 - 物体 - Armory特性`中创建一个新的特性.将类型设置为 `Haxe`并按下`新建脚本`按钮。
 
-Press the `Edit Script` to open script file in Kode Studio. Kode Studio is a dedicated code editor which includes code completion and debugging support.
+按下`编辑脚本`在Kode Studio中打开脚本文件。Kode Studio是一个包含代码完成和调试支持的专用代码编辑器。
 
 ```haxe
 package arm;
@@ -173,39 +173,38 @@ class SpawnBox extends iron.Trait {
 
 <a href="./getting_started/img/playground/13.jpg">![](/getting_started/img/playground/13.jpg)</a>
 
-### Bundled Scripts
+### 绑定脚本
 
-Armory comes with a set of pre-created bundled scripts. Similar to regular script, bundled script can be attached to an object as a trait. In this tutorial, we will use the `PhysicsDrag` trait. When this trait is attached to physics-enabled object, it lets us drag this object around using the mouse.
+Armory附带了一组预先创建的绑定脚本。与常规脚本类似，绑定脚本可以作为特性附加到物体上。在本教程中，我们将使用`物理拖拽`特性。当这个特性附加到启用物理功能的物体上时，它允许我们使用鼠标拖动这个物体。
 
 <a href="./getting_started/img/playground/14.jpg">![](/getting_started/img/playground/14.jpg)</a>
 
-### UI Canvas
+### UI画布
+为了构建游戏界面，使用了专用的ArmorUI工具。
 
-To build game interface, a dedicated ArmorUI tool is used.
+除了物体，场景本身也可以包含特征。这是一个很好的UI特性。切换到`场景`选项卡并在`Armory特性`面板中添加一个新特性。将特性类型设置为`UI`然后按下`新画布`按钮。之后，按下`编辑画布`按钮会启动ArmorUI。
 
-Apart from objects, scene itself can contain traits as well. This is a good fit for UI traits. Switch to `Scene` tab and add a new trait in the `Armory Traits` panel. Set trait type to `UI` and press the `New Canvas` button. Afterwards, pressing the `Edit Canvas` button will launch ArmorUI.
-
-In `ArmorUI`, press `Text` button to spawn a text object. Adjust the text in `Properties` panel and hit `Save`. If you launch the game now, canvas will get displayed.
+在`ArmorUI`中按下`Text`按钮生成文本对象。在`属性`面板调整文本然后点击`保存`。如果你现在启动游戏，画布就会显示出来。
 
 <a href="./getting_started/img/playground/15.jpg">![](/getting_started/img/playground/15.jpg)</a>
 
-### Render Path
+### 渲染路径
 
-Armory is powered by a programmable render path system. Navigate to the `Render - Armory Render Path` panel to access the settings. Several presets are available for simple configuration.
+Armory由可编程渲染路径系统驱动。导航到`渲染 - Armory渲染路径`面板来获取设置。有几个可用于简单配置的预置。
 
-Multiple render paths can be created. When exporting the project, you can use the render path which best suits the target hardware.
+可以创建多个渲染路径。导出项目时，可以使用最适合目标硬件的渲染路径。
 
-If you run on a modern GPU (OpenGL 4.5+), select `Max (Game)` preset to enable more advanced effects like voxel-based ambient occlusion. Note that Voxel AO needs to run in standalone window - simply press `F5` to launch.
+如果你在现代GPU上运行（OpenGL 4.5+），选择`最大（游戏）`预设启用更先进的效果，如基于体素的环境遮挡。请注意，VoxelAO需要在独立窗口中运行-只需按`F5` 即可启动。
 
 <a href="">![](/getting_started/img/playground/16.png)</a>
 
-### Exporter
+### 导出器
 
-When we are ready to publish our project, `Properties - Render - Armory Exporter` does the job.
+当我们准备发布我们的项目时，`属性 - 渲染 - Armory导出器`做这份工作。
 
-You can create multiple export presets, each specifying a target platform, graphics API, render path and start-up scene. Select desired platform and hit `Publish` button. Once finished, hit `Triangle - Open Folder` to view the exported files.
+您可以创建多个导出预置，每个都指定一个目标平台、图形API、渲染路径和启动场景。选择所需的平台并点击`发布`按钮。一旦完成，点击`三角形 - 打开文件夹`查看导出的文件。
 
 <a href="">![](/getting_started/img/playground/17.png)</a>
 
-- Continue to the [Tanks tutorial](/getting_started/tanks.md)
-- Continue to the [Vehicle tutorial](/getting_started/vehicle.md)
+- 继续前往[坦克教程](/getting_started/tanks.md)
+- 继续前往[车辆教程](/getting_started/vehicle.md)
