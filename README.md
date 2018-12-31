@@ -27,7 +27,7 @@ Armory SDK能运行在**Windows**, **Linux** 和 **macOS**。项目可以部署�
 - [建筑模板](https://github.com/armory3d/archviz_templates/releases)
 - [示例](https://github.com/armory3d/armory_examples/releases)
 - [全局照明](/graphics/global_illumination)
-- [像素世界](https://github.com/armory3d/voxel_world)
+- [体素世界](https://github.com/armory3d/voxel_world)
 - [材质库](https://github.com/armory3d/material_vault)
 
 ### 许可
