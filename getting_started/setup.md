@@ -24,7 +24,7 @@ Armory附带了你所需要的一切。
 ### Windows
 
 - 若要查看错误消息，请从控制台启动Blender或按`Blender - 窗口 - 切换系统控制台`。
-- `类型没找到：Main`错误 - 在一条安全路径保存你的`.blend`文件，像是`C:\Users\user_name\Documents\test`，否则，Windows可能会阻止写入文件。
+- `类型未找到：Main`错误 - 在一条安全路径保存你的`.blend`文件，像是`C:\Users\user_name\Documents\test`，否则，Windows可能会阻止写入文件。
 - 如果你得到了丢失`.dll`的错误，请尝试安装[Visual C++ Redistributable for Visual Studio 2017](https://go.microsoft.com/fwlink/?LinkId=746572)。
 
 ### Linux
