@@ -14,9 +14,9 @@
 ![](/getting_started/img/tanks/3.jpg)
 
 蓝色坦克充当玩家2。我们定义相同的控制，但是将键位映射到WSAD和第二个连接的游戏手柄。
-In a **TankTree**, we listen to the events and perform actions to actually control the tank. The reason this node tree is separate is that we attach it to both tanks, preventing duplicated node trees.
+在**TankTree**中,我们监听事件并执行实际控制坦克的动作。之所以这个节点树是分开的，是因为我们将它附加到两个坦克中，从而防止重复的节点树。
 
-**On Event** node is set to listen to the **'turn_left'** event. For player 1, this event is triggered when left key is pressed. For player 2, it happens on the A key press. **On Event** node is connected to the **Rotate Object** node, with **Vector Z** value set to a small positive value controlling the rotation speed. Playing the game now, pressing the left key rotates the tank! 
+**On Event**节点被设置成监听 **'turn_left'** 事件。对于玩家1，此事件是在按左键时触发的。对于玩家2，它发生在按下A键时。 **On Event**节点连接到**旋转物体**节点， with **向量Z** value set to a small positive value controlling the rotation speed. Playing the game now, pressing the left key rotates the tank! 
 
 ![](/getting_started/img/tanks/4.jpg)
 
