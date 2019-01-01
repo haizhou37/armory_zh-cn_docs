@@ -1,9 +1,9 @@
-# Physics
+# 物理
 
-Armory is designed to work with any physics engine. Internally, a glue code is written which binds the physics simulation. This lets you pick the most suitable physics engine depending on project needs and makes Armory future-proof.
+Armory是为任何物理引擎设计的。在内部，编写了一个胶水代码来绑定物理模拟。这让你选择最合适的物理引擎取决于项目的需要，并使得Armory不会过时。
 
-If no rigid body is detected in the scene, Armory skips including the physics module to save space and performance. To force the physics module, set `Armory Project - Physics` from `Auto` to `Enabled`.
+如果现场没有发现刚体，Armory会跳过物理模块，以节省空间和性能。若要强制物理模块，请设置`Armory项目 - 物理`从`自动`改为`开启`。
 
-By default, Armory is configured to use a full featured [Bullet physics](https://github.com/armory3d/haxebullet). If lighter engine is sufficient, [Oimo physics](https://github.com/armory3d/oimo_module) is provided. With Oimo, triangle mesh shapes are approximated using convex hulls.
+默认情况下，Armory使用功能齐全的[Bullet物理](https://github.com/armory3d/haxebullet)。如果轻量引擎够用， 我们也提供[Oimo physics](https://github.com/armory3d/oimo_module)。在OIMO中，三角形网格形状是用近似凸壳的。
 
-To pick active physics engine, set `Armory Project - Physics Engine` property.
+若要设置有效的物理引擎，请设置`Armory项目 - 物理引擎`属性。
