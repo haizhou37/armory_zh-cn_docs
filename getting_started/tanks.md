@@ -16,13 +16,12 @@
 蓝色坦克充当玩家2。我们定义相同的控制，但是将键位映射到WSAD和第二个连接的游戏手柄。
 在**TankTree**中,我们监听事件并执行实际控制坦克的动作。之所以这个节点树是分开的，是因为我们将它附加到两个坦克中，从而防止重复的节点树。
 
-**On Event**节点被设置成监听 **'turn_left'** 事件。对于玩家1，此事件是在按左键时触发的。对于玩家2，它发生在按下A键时。 **On Event**节点连接到**旋转物体**节点， with **向量Z** value set to a small positive value controlling the rotation speed. Playing the game now, pressing the left key rotates the tank! 
-
+**On Event**节点被设置成监听 **'turn_left'** 事件。对于玩家1，此事件是在按左键时触发的。对于玩家2，它发生在按下A键时。 **On Event**节点连接到**旋转物体**节点，而**向量Z** 值设置为控制旋转速度的一个小的正值。现在播放游戏，按左键旋转坦克！
 ![](/getting_started/img/tanks/4.jpg)
 
-We do the same for the **'turn_right'** event, however the **Vector Z** value is set to a negative value to rotate in the opposite direction.
+我们对 **'turn_right'** 事件做同样的事，然而**向量Z**值设置为负值，使其以相反的方式旋转。
 
-On to the handling **'forward'** event. To figure out which direction should the tank move in, **Vector from Transform** node is used with type set to **Look**. This vector is then scaled down using **Vector Math** node to slow down tank speed moving forward. Resulting vector is passed into **Translate Object** node.
+关于对 **'forward'** 事件的处理。为了弄清楚坦克应该朝哪个方向移动，**变换向量**节点的类型设置为**Look**. This vector is then scaled down using **Vector Math** node to slow down tank speed moving forward. Resulting vector is passed into **Translate Object** node.
 
 ![](/getting_started/img/tanks/5.jpg)
 
