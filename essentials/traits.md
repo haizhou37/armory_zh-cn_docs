@@ -1,27 +1,27 @@
-# Traits
+# 特性
 
-Armory uses a trait(component) system to insert logic into Blender objects and make them interactive. Traits can be attached to scene objects or scenes itself. To inspect traits placed in the scene, switch to `Groups` view in the `Outliner`.
+Armory用特性（组件）系统将逻辑附加到Blender物体然后让他们交互。特性可以附加到场景物体或场景本身。若要检查场景中的特性，请切换到`大纲编辑器 - 群组`查看。
 
 ![](/essentials/img/traits_groups.png)
 
-There are several trait types:
-- `Haxe Script` - writing script from scratch in Haxe
-- `Bundled Script` - handling common stuff like character controllers, bundled in Armory
-- `Logic Nodes` - assembling logic visually
-- `Canvas` - working with user interface
+这里有几种特性类型：
+- `Haxe脚本` - 用Haxe从头写脚本。
+- `绑定脚本` - 处理普通的东西，如字符控制器，和Armory绑定。
+- `逻辑节点` - 可视化集合游戏逻辑。
+- `画布` - 使用用户界面。
 
-For scripts, it is possible to pass parameters or set script properties straight from Blender.
+对于脚本，可以直接从Blender传递参数或设置脚本属性。
 
 ![](/essentials/img/traits_panel.png)
 
-## Trait events
+## 特性事件
 
-Trait exposes events - this makes it possible to get notified about its life-cycle.
+特性暴露事件 - 这样就有可能得到关于其生命周期的通知。
 
-- `Trait.notifyOnAdd()` - trait is added to an object
-- `Trait.notifyOnInit()` - object which this trait belongs to is added to scene
-- `Trait.notifyOnRemove()` - object which this trait belongs to is removed from scene
-- `Trait.notifyOnUpdate()` - update game logic here
-- `Trait.notifyOnRender()` - update rendering here
+- `Trait.notifyOnAdd()` - 特性被添加到物体。
+- `Trait.notifyOnInit()` - 特性所属的物体被添加到场景。
+- `Trait.notifyOnRemove()` - 特性所属的物体从场景被移除。
+- `Trait.notifyOnUpdate()` - 在这里更新游戏逻辑。
+- `Trait.notifyOnRender()` - 在这里更新渲染。
 
-As the scene is being built asynchronously, `onInit` event can get called at a time when not all scene objects are present yet. If trait construction depends on other scene objects, use `Scene.active.notifyOnInit()` event which gets called as soon as the scene is fully constructed.
+当场景被异步构建时，`onInit`事件可以在尚未出现所有场景物体的情况下调用。如果特性构造依赖于其他场景对象，请使用`Scene.active.notifyOnInit()`事件，该事件在场景完全构造后立即调用。
