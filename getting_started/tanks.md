@@ -21,36 +21,36 @@
 
 我们对 **'turn_right'** 事件做同样的事，然而**向量Z**值设置为负值，使其以相反的方式旋转。
 
-关于对 **'forward'** 事件的处理。为了弄清楚坦克应该朝哪个方向移动，**变换向量**节点的类型设置为**Look**. This vector is then scaled down using **Vector Math** node to slow down tank speed moving forward. Resulting vector is passed into **Translate Object** node.
+关于对 **'forward'** 事件的处理。为了弄清楚坦克应该朝哪个方向移动，**变换向量**节点的类型设置为**Look**。然后用**向量数学**缩放这个向量来减慢坦克向前移动的速度。 向量结果传递到**移动物体**节点。
 
 ![](/getting_started/img/tanks/5.jpg)
 
-As before, we do the same for **'backward'** event with translate vector reversed.
+和以前一样，我们对 **'backward'** 事件做同样的事，移动反向向量。
 
-Now that the tanks are fully controllable, we make them shoot bullets. To keep scene clear, bullet object is placed in the second scene layer with **Render disabled**. This ensures object will be exported but not visible on its own.
+现在坦克是完全可控的，我们让他们发射子弹。为了保持场景清晰，子弹物体被放置在第二场景层，**禁用渲染**。这确保了对象将被导出，但它本身是不可见的。
 
 ![](/getting_started/img/tanks/6.jpg)
 
-Selecting the red tank, an empty object is added as a child - the location of this object defines where to shoot bullets from. A new logic tree is added to this empty object. M key or gamepad cross/a key emits a **'fire'** event. We do the same for blue tank.
+如果选择红色坦克，则将空对象添加到子对象 - 该物体的位置定义了从哪里发射子弹。一个新的逻辑树被添加到这个空对象中。M键或游戏手柄叉/A键发射 **'fire'** 事件。我们对蓝色坦克也是这样。
 
 ![](/getting_started/img/tanks/7.jpg)
 
-We attach another logic tree - handling response to the **'fire'** event. We spawn a new object - our bullet model from layer 2, and set its location to the logic tree owner - in this case a bullet spawn point - defined as an empty object placed as a child of tank.
+我们将另一个逻辑树处理响应附加到 **'fire'** 事件。我们生成一个新的物体 - 在层2的子弹模型的位置设置为逻辑树所有者。 - 在这种情况下，子弹生成点。 - 定义为放置为坦克子类的空物体。
 
 ![](/getting_started/img/tanks/8.jpg)
 
-Playing the scene now, we discover the bullets fall from the cannon down to the ground. We need some fire powder!
+现在播放场景，我们发现从大炮出来的子弹下降到地面。我们需要一些火药！
 
 ![](/getting_started/img/tanks/a.jpg)
 
-**Apply Impulse** node fixes that. Similar to moving the tank forward, we acquire the forward vector and scale it up.
+**施加冲击力**节点能解决它。类似于向前移动坦克，我们获取前向向量，并将其放大。
 
 ![](/getting_started/img/tanks/9.jpg)
 
-Even though Armory culls out of screen objects, it is important to keep resources used down to a minimum. We remove each bullet after 2 seconds of lifetime. To do this, **Array(Object)** node is placed and all fired bullets are stored in this array using the **Array Add** node. We wait 2 seconds with **Sleep** node and call **Remove Object** node. **Array Shift** node feeds the first element from bullet array into the **Remove Object** node, and also removes this element from array itself.
+尽管Armory能筛除屏幕外的物体，但将使用的资源减少到最低限度也是重要的。 我们移除在生命周期的2秒后的子弹。为了做到这一点，纺织一个**数组（物体）** 节点，并用**添加数组**节点将所有发射的子弹存储在此数组中。我们通过**休眠**节点等待2秒并调用**移除物体**节点。**数组替换**节点将第一个元素从子弹数组输入到**移除对象**节点，并将此元素从数组本身中移除。
 
 ![](/getting_started/img/tanks/10.jpg)
 
-That's it - feel free to experiment further! Get the full blend for this tutorial:
+就这样-你可以自由地做进一步的实验了！获得本教程的全部混合内容：
 
 - https://github.com/armory3d/armory_tutorials/tree/master/tanks
