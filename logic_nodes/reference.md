@@ -62,7 +62,7 @@
 
 ### Loop
 
-它是基本的(i in from...to)循环。`Index`给出由索引值指定的值。`Done`在执行循环时被调用。
+它是基本的(i in from...to)循环。`Index`给出由索引值指定的值。`Done`在循环完成时被调用。
 
 ![](/assets/Loop.JPG)
 
