@@ -1,184 +1,184 @@
-# Reference
+# 参考
 
-## Logic
+## 逻辑
 
 ### Alternate
 
-Alternates between its activated outputs to pass through its input when it is being re-activated.  
+当它被重新激活时，在其激活的输出之间交替通过它的输入.
 
 ![](/assets/Alternate.JPG)
 
 
 ### Array loop
 
-It loops through each item assigned in an array."Value" give item specified by index's value."Done" calls connectors when it is done looping through the array.
+它循环遍历数组中分配的每个项。`Value`给出由索引值指定的项。`Done`在遍历数组时调用连接器。
 
 ![](/assets/array-loop.JPG)
 
 
 ### Branch
 
-When activated, activates its "True" or "False" output, according to the state of the plugged-in boolean.
+激活时，根据插入布尔值的状态，激活其`Ture`或`False`输出。
 
 ![](/assets/Branch.JPG)
 
 
 ### Gate
 
-Logic nodes way to do "if" statements. When activated, it compares if its two inputs are being Equal, Greater Equal, Less Equal, or Not Equal, regardless of variable type, and passes through its red input if the set state is the case.
+逻辑节点执行`if`语句的方法。激活时，它将比较它的两个输入是相等的、大的相等的、小于等于的还是不相等的，而不管变量类型如何，如果SET状态是这样的话，则通过红色输入。
 
-"And" and "Or" are being used for booleans only, and pass through the input when both bools are true \(and\) or at least one \(or\).
+`And`或`Or`仅用于布尔，当两个布尔为true（and）或至少一个（or）时，通过输入。
 
 ![](/assets/Gate.JPG)
 
 
 ### Inverse
 
-Bool will become opposite, True will become False, False will become True.
+布尔会变成对立面，真会变假，假会变成真。
 
 ![](/assets/Inverse.JPG)
 
 
 ### Is True/False
 
-Passes through its activation only if the plugged in boolean is "True"/"False", according to the node.
+根据节点的说法，只有当插入的布尔值为`True`或`False`时，才能通过它的激活。
 
 ![](/assets/Is-true_false.JPG)
 
 
 ### Is None
 
-Give bool value of null i.e., If it is null then its output true(Doesn't have value), if it is not null then it outputs false(Have value).
+给出NULL的布尔值，也就是说，如果它是NULL，那么它的输出为`True`(没有值)，如果它不是NULL，那么它输出`False`(有值)。
 
 ![](/assets/is-none.JPG)
 
 
 ### Is Not None
 
-Give opposite bool value of null i.e., If it is not null then its output true(Have value), if it is null then it output false(Doesn't have value).
+给出相反的NULL值，即如果它不是NULL，那么它的输出为`True`(有值)，如果它是NULL，那么它输出`False`(没有值)。
 
 ![](/assets/is-not-none.JPG)
 
 
 ### Loop
 
-It is basically for(i in from...to) loop. "Index" give value specified by the index value."Done" is called when it is done looping.
+它是基本的(i in from...to)循环。`Index`给出由索引值指定的值。`Done`在执行循环时被调用。
 
 ![](/assets/Loop.JPG)
 
 
 ### Loop Break
 
-Loop Break terminates loop containing it.
+Loop Break终止包含它的循环。 
 
 ![](/assets/loop-break.JPG)
 
 
 ### Merge
 
-The "New" button creates new inputs, the "X" one deletes the most bottom one. If it receives on activation from any of its inputs, it will activate its output.
+“New”按钮创建新输入，“X”按钮删除最底层的输入。如果它从任何一个输入接收激活，它将激活它的输出。
 
 ![](/assets/Merge.JPG)
 
 
 ### Not
 
-Inverts a plugged in boolean, so if its input is "true" it outputs "false".
+反转插入的布尔值，因此如果输入为`True`，则输出`False`。
 
 ![](/assets/Not.JPG)
 
 
 ### Sequence
 
-Its call output in sequential order.
+其调用输出按顺序排列。
 
 ![](/assets/Sequence.JPG)
 
 
 ### Switch
 
-Check the value on input “in”, When the input value matches Case1, Case 2 or Case 3 value, it will trigger the corresponding output Case 1, Case 2 or Case 3. Click "new" to add more Case Value.
+检查输入`in`上的值，当输入值与`case 1、case 2`或`case 3`值匹配时，它将触发相应的`case 1、case 2`或`case 3`。单击`New`以添加更多的`Case`。
 
 ![](/assets/Switch.JPG)
 
 
 ### To Bool
 
-Is false when there is no event on input, true when there is an event on input.
+在输入中没有事件时为`False`，当输入上有事件时为`True`。
 
 ![](/assets/to-bool.JPG)
 
 
 ### While
 
-Its loop through as long as bool specified in "Condition" is same.(i.e., like  while(jumping == true){do domething}).
+它的循环只要在`Condition`中指定的bool是相同的(i.e., like  while(jumping == true){do domething})。
 
 ![](/assets/While.JPG)
 
 
 ### Sleep
 
-Activates the node connected with its output after the float value in seconds after it was activated itself.
+在它被激活后的秒内激活节点与其输出连接后的浮点值。
 
 ![](/assets/sleep.JPG)
 
 
-## Event
+## 事件
 
 ### On Event
 
-Activates the node\(s\) being connected to Sent Event or Sent Global Event specified in other node\(s\) tree.
+激活连接到其他节点树中指定的`Sent Event`或`Sent Global Event`的节点。
 
 ![](/assets/on-event.JPG)
 
 
 ### On Init
 
-Activates the node\(s\) being connected to it on the first frame of the game.
+激活在游戏的第一帧上连接到它的节点。
 
 ![](/assets/On-Init.JPG)
 
 
 ### On Timer
 
-Activates the node\(s\) being connected to after a Timer countdown on from the beginning of the game, repeatedly when box ticked.
+从游戏开始时，在计时器倒计时之后，激活连接到的节点，当方框打勾时重复。
 
 ![](/assets/On-Timer.JPG)
 
 
 ### On Update
 
-Activates the node\(s\) being connected to it every frame.
+激活每个帧连接到它的节点。
 
 ![](/assets/On-Update.JPG)
 
 
 ### On Volume Trigger
 
-The lower object-input is used as Volume, the upper one as object-input for the object that enters/leaves/overlaps with it. 
+下面的对象输入至Volume，上面的对象输入作为和它进入/离开/重叠的物体。 
 
-Enter-mode: Activates the connected nodes on the frame the object enters the volume, on all other frames it doesn't do that.
+进入模式：激活对象进入体积的帧上的连接节点，而在所有其他帧上，它不会激活。
 
-Leave-mode: Activates the connected nodes on the frame the object leaves the volume, on all other frames it doesn't do that.
+离开模式：激活对象离开体积的帧上的连接节点，而在所有其他帧上，它不会这样做。
 
-Overlap-mode: Activates the connected nodes on the frame the object overlaps with the volume, on all other frames it doesn't do that.
+重叠模式：激活对象与体积重叠的帧上的连接节点，在所有其他帧上不激活。
 
 ![](/assets/on-volume-trigger.JPG)
 
 
-## Activators
+## 触发器
 
 
 ### On Mouse
 
-Activates the node\(s\) being connected to it when the set Mouse-button is being started, held down or released, depending on settings.
+根据设置的不同，启动、按住或释放设置鼠标按钮时，激活连接到它的节点。
 
 ![](/assets/On-Mouse.JPG)
 
 
 ### On Keyboard
 
-Activates the node\(s\) being connected to it when the set Keyboard-button is being started, held down or released, depending on settings.
+启动、按住或释放设置键盘按钮时，激活连接到它的节点，具体取决于设置。
 
 ![](/assets/On-Keyboard.JPG)
 
