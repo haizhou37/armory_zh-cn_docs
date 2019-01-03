@@ -1,27 +1,26 @@
-# Vehicle Setup
+# 车辆设置
 
-This docs is based on [Panda3D Bullet Vehicle Doc](https://www.panda3d.org/manual/index.php/Bullet_Vehicles) with additional topics to cover some of common faced problems
+这个文档是基于[Panda3D Bullet Vehicle Doc](https://www.panda3d.org/manual/index.php/Bullet_Vehicles)，同过提供了更多的主题来讨论一些常见的面临的问题。
 
-This article discussed the out of box Bullet Physics implementation of vehicle, which is based on raycast vehicle. The benefit of this type of vehicle is it is easier to implement vs constraint type vehicle.
+本文讨论了基于光线投射的车载开箱式Bullet Physics实现。这种车辆的优点是比约束型车辆更容易实现。
 
-This approach is used in some of arcade games. 
+这种方法在一些街机游戏中使用。
 
-Following articles go over the high level of the vehicle template implementation and provide some optional suggestions (as these suggestions are not generics across every type of implementations)
+下面的文章详细介绍了车辆模板实现的高级别，并提供了一些可选的建议(因为这些建议并不是在每种实现类型中都是泛型的)。
 
-The initial vehicle template setup can be found in vehicle in [Armory3D Templates](https://github.com/armory3d/armory_templates)
+最初的车辆模板设置可以在[Armory3D模板](https://github.com/armory3d/armory_templates)
 
-In `vehicle` object, there is a script tight to it
+在`vehicle`物体上有个脚本和它密切联系。
 
-### Setup Vehicle
+### 设置车辆
 
-Following codes did following
-Get all the wheels object in the scene according to their names and pushes into an array
+下面的代码是这样做的，根据它们的名字，在场景中获取所有的轮子对象，并将它们推入一个数组中。
 ```
 for (n in wheelNames) {
     wheels.push(iron.Scene.active.root.getChild(n));
 }
 ```
-Setup vehicle body by using the mesh under `vehicle` object as compound to set it up
+用`vehicle`物体下的网格作为复合设置车辆车身
 
 ```
 var wheelDirectionCS0 = BtVector3.create(0, 0, -1);
@@ -42,26 +41,26 @@ compound.addChildShape(localTrans, chassisShape);
 carChassis = createRigidBody(chassis_mass, compound);
 ```
 
-Create the vehicle physics object out, attach the vehicle body and wheels together base on their current info
+创建车辆物理对象，根据车辆的当前信息将车身和车轮连接在一起。
 
-*Note: It is important to note that, while the vehicle demo use parent/child relationship, once they are part of physics world, they are no longer parent/child relation (unless doing through physics constraint). For example, wheels may fall off from their original parent/child positions to the `vehicle` object base on physics interaction.*
+*注意：重要的是要注意的是，虽然车辆演示使用父母/子女关系，一旦他们成为物理世界的一部分，他们就不再是父子关系(除非通过物理约束)。例如，车轮可能从原来的父/子位置滑落到基于物理相互作用的“车辆”物体。*
 
 ```
-// Create vehicle
+//创造车辆
 var tuning = BtVehicleTuning.create();
 var vehicleRayCaster = BtDefaultVehicleRaycaster.create(physics.world);
 vehicle = BtRaycastVehicle.create(tuning, carChassis, vehicleRayCaster);
 
-// Never deactivate the vehicle
+//永远停用车辆
 carChassis.setActivationState(BtCollisionObject.DISABLE_DEACTIVATION);
 
-// Choose coordinate system
+//选择坐标系
 var rightIndex = 0;
 var upIndex = 2;
 var forwardIndex = 1;
 vehicle.setCoordinateSystem(rightIndex, upIndex, forwardIndex);
 
-// Add wheels
+//添加车轮
 for (i in 0...wheels.length) {
 	var vehicleWheel = new VehicleWheel(i, wheels[i].transform, object.transform);
 
@@ -74,7 +73,7 @@ for (i in 0...wheels.length) {
            vehicleWheel.isFrontWheel);
 }
 
-// Setup wheels
+//安装车轮
 for (i in 0...vehicle.getNumWheels()) {
     var wheel:BtWheelInfo = vehicle.getWheelInfo(i);
     wheel.m_suspensionStiffness = suspensionStiffness;
@@ -90,17 +89,17 @@ for (i in 0...vehicle.getNumWheels()) {
 physics.world.addAction(vehicle);
 ```
 
-#### Prevent Vehicle Flip Over
+#### 防止车辆翻车
 
-*Note: This is an optional suggestion*
+*注：这是一项可供选择的建议*
 
-Depend on the game type, there maybe situations where one do not wish the vehicle to flip over even during high speed during steering. 
+取决于游戏类型，可能有一些情况下，人们不希望车辆翻转，即使在高速驾驶。
 
-Out of box vehicle implementation is toward more realistic behavior where the steering at higher speed (or hard angle/lighter vehicle body etc...) is like to flip over
+开箱即用的汽车实现是朝着更现实的行为，其中转向更高的速度(或硬角/较轻的车身等.)就像翻车。
 
-There are multiple approaches to prevent it, following is one possible approach inspired by [Bullet Forum Discussion](https://pybullet.org/Bullet/phpBB3/viewtopic.php?t=8153)
+有多种方法来防止它，下面是一种可能的方法[Bullet Forum Discussion](https://pybullet.org/Bullet/phpBB3/viewtopic.php?t=8153)
 
-Before adding the `vehicle` to physics world, added following to the `carChassis`
+在添加`vehicle`到物理世界之前，在`carChassis`后面加上：
 ```		
 // https://pybullet.org/Bullet/phpBB3/viewtopic.php?t=8153
 // prevent vehicle from flip over, by limit the rotation  on forward axis
@@ -109,42 +108,42 @@ carChassis.setAngularFactor(new BtVector3(0,0,1));
 physics.world.addAction(vehicle);
 ```
 
-Above angular factor limit the rotation on x and y axis, so the vehicle will not able to rotate, as the chassis object will balance out the flip force
+以上的角度因子限制了x轴和y轴上的旋转，因此车辆将无法旋转，因为底盘物体将平衡翻转力。
 
-This may make the vehicle less realistic as it will always be stable even during sharp corner turns at extreme high speed
+这可能会使车辆变得不太现实，因为即使在高速急转弯时，它也始终是稳定的。
 
-### Accelerate
+### 加速
 
-To accelerate, applies the engine force (can also think kind of like torque) wheel (i)
-The index is based on the order that the wheel is added to the vehicle
+为了加速，应用发动机力(也可以想出一种类似的扭矩)轮。
+该索引是根据车轮被添加到车辆的顺序来确定的。
 ```
  vehicle.applyEngineForce(engineForce, i);
 ```
 
-Negative engine speed will eventually cause the vehicle to reverse, it can also used to decelerate the vehicle.
+发动机转速负值最终会导致车辆倒车，也可以用来减速车辆。
 
-##### Find Current Vehicle Speed
+##### 寻找当前车速
 
-*Note: This is an optional suggestion*
+*注：这是一个可选的建议*
 
-There may be situation needed to find the current vehicle speed, one can get through following
+在某些情况下，可能需要找到当前的车速，可以通过以下操作：
 ```
 var speed = Math.round(vehicle.getCurrentSpeedKmHour());
 ```
-which is the easier out of box way to get the speed in km per hour
+以每小时公里为单位的更容易的开箱即用方式。
 
-Following is another way, which should get very similar value to above by using the wheel rotation delta to get the speed the vehicle is moving
+以下是另一种得到和上面相似的值的方式，通过使用车轮旋转差值得到车辆移动的速度。
 ```
 var speed = Math.round(((backendWheelInfo.m_deltaRotation / Time.step) * backendWheelInfo.m_wheelsRadius * 3.6));
 ```
 
-##### Limit Top Speed
+##### 限制最高速度
 
-*Note: This is an optional suggestion*
+*注：这是一项可供选择的建议*
 
-If keep adding force to wheel, the speed of vehicle will keep increasing, which may not be ideal in some of cases, as in theory, there is a bottleneck to a vehicle's speed.
+如果在车轮上继续施加力，车辆的速度会不断增加，在某些情况下这可能并不理想，因为理论上说，车辆速度存在瓶颈。
 
-In this case, one can do following
+在这种情况下，您可以执行以下操作：
 ```
 var speed = Math.round(vehicle.getCurrentSpeedKmHour());
 if (speed < MAX_SPEED)
@@ -157,22 +156,22 @@ else
 }
 ```
 
-Above calculates out the current speed of vehicle and then no longer allow more engine force to throttle the speed.
-This method may not 100% prevent the vehicle at the `MAX_SPEED`, but it should limit the speed around that area
+以上计算出车辆的当前速度，然后不再允许更多的发动机力提高速度。
+这种方法可能不会100%地阻止车辆在`MAX_SPEED`上行驶，但它应该限制该区域161附近的速度。
 
-### Brake
+### 刹车
 
-To accelerate, applies the break force (can also think kind of like torque) wheel (i)
-The index is based on the order that the wheel is added to the vehicle
+为了减速，应用制动力(也可以想出一种类似扭矩)的车轮。
+该索引是根据车轮被添加到车辆的顺序来确定的。
 ```
 vehicle.setBrake(breakingForce, i);
 ```
 
-Negative Engine Force (-1 * engineForce) can also use to decelerate vehicle. But the behavior of brake/negative engine force may suit different situations. 
+相反的引擎力`-1 * engineForce`也可用于减速车辆。但制动/负动力的行为可能适合不同的情况。
 
-Please feel free to experiment and find best suitable approach.
+请随时进行实验，并找到最佳的合适方法。
 
-Brake will cause the vehicle to stop at 0 eventually, while negative engine force will start to reverse.
+刹车将导致车辆最终在0停止，而负发动机的力量将开始逆转。
 
 ### Steering
 
