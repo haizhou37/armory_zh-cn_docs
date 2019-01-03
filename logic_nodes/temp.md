@@ -1,13 +1,13 @@
-# Logic Nodes
+# 逻辑节点
 
-## Tree example
+## 节点树示例
 
-Logic node tree description.
+逻辑节点树描述
 
 <iframe width="100%" height="400" src='https://armory3d.org/logic/index.html?{"nodes":[{"id":0,"name":"Rotate%20Object","type":"RotateObjectNode","x":283,"y":100,"color":-5025958,"inputs":[{"id":0,"node_id":0,"name":"In","type":"ACTION","color":-3388340,"default_value":0},{"id":0,"node_id":0,"name":"Object","type":"OBJECT","color":-14250817,"default_value":0},{"id":0,"node_id":0,"name":"Vector","type":"VECTOR","color":-10238109,"default_value":[0,0,0]}],"outputs":[{"id":0,"node_id":0,"name":"Out","type":"ACTION","color":-3388340,"default_value":0}],"buttons":[]},{"id":1,"name":"On%20Update","type":"OnUpdateNode","x":76,"y":122,"color":-5025958,"inputs":[],"outputs":[{"id":1,"node_id":1,"name":"Out","type":"ACTION","color":-3388340,"default_value":0}],"buttons":[]},{"id":2,"name":"Vector","type":"VectorNode","x":76,"y":197,"color":-5025958,"inputs":[{"id":2,"node_id":2,"name":"X","type":"VALUE","color":-10238109,"default_value":0},{"id":2,"node_id":2,"name":"Y","type":"VALUE","color":-10238109,"default_value":0},{"id":2,"node_id":2,"name":"Z","type":"VALUE","color":-10238109,"default_value":0.03}],"outputs":[{"id":2,"node_id":2,"name":"Vector","type":"VECTOR","color":-10238109,"default_value":[0,0,0]}],"buttons":[]}],"links":[{"id":0,"from_id":1,"from_socket":0,"to_id":0,"to_socket":0},{"id":1,"from_id":2,"from_socket":0,"to_id":0,"to_socket":2}]}'></iframe>
 
-## Tree example 2
+## 节点树示例2
 
-Logic node tree description.
+逻辑节点树描述
 
 <iframe width="100%" height="400" src='https://armory3d.org/logic/index.html?{"nodes":[{"id":0,"name":"Rotate Object","type":"RotateObjectNode","x":283,"y":100,"color":-5025958,"inputs":[{"id":0,"node_id":0,"name":"In","type":"ACTION","color":-3388340,"default_value":0},{"id":0,"node_id":0,"name":"Object","type":"OBJECT","color":-14250817,"default_value":0},{"id":0,"node_id":0,"name":"Vector","type":"VECTOR","color":-10238109,"default_value":[0,0,0]}],"outputs":[{"id":0,"node_id":0,"name":"Out","type":"ACTION","color":-3388340,"default_value":0}],"buttons":[]},{"id":2,"name":"Vector","type":"VectorNode","x":77,"y":239,"color":-5025958,"inputs":[{"id":2,"node_id":2,"name":"X","type":"VALUE","color":-10238109,"default_value":0},{"id":2,"node_id":2,"name":"Y","type":"VALUE","color":-10238109,"default_value":0},{"id":2,"node_id":2,"name":"Z","type":"VALUE","color":-10238109,"default_value":0.03}],"outputs":[{"id":2,"node_id":2,"name":"Vector","type":"VECTOR","color":-10238109,"default_value":[0,0,0]}],"buttons":[]},{"id":3,"name":"On Mouse","type":"OnMouseNode","x":77,"y":122,"color":-5025958,"inputs":[],"outputs":[{"id":3,"node_id":3,"name":"Out","type":"ACTION","color":-3388340,"default_value":0}],"buttons":[{"name":"property0","type":"ENUM","output":0,"default_value":0,"data":["Down","Started","Released","Moved"]},{"name":"property1","type":"ENUM","output":0,"default_value":0,"data":["left","right","middle"]}]}],"links":[{"id":1,"from_id":2,"from_socket":0,"to_id":0,"to_socket":2},{"id":2,"from_id":3,"from_socket":0,"to_id":0,"to_socket":0}]}'></iframe>
