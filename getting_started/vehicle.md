@@ -114,7 +114,7 @@ physics.world.addAction(vehicle);
 
 ### 加速
 
-为了加速，应用发动机力(也可以想出一种类似的扭矩)轮。
+为了加速，应用发动机给(也可以想出一种类似的扭矩)车轮`i`施加力。
 该索引是根据车轮被添加到车辆的顺序来确定的。
 ```
  vehicle.applyEngineForce(engineForce, i);
@@ -157,11 +157,11 @@ else
 ```
 
 以上计算出车辆的当前速度，然后不再允许更多的发动机力提高速度。
-这种方法可能不会100%地阻止车辆在`MAX_SPEED`上行驶，但它应该限制该区域161附近的速度。
+这种方法可能不会100%地阻止车辆以最大速度行驶，但它应该限制该区域的速度。
 
 ### 刹车
 
-为了减速，应用制动力(也可以想出一种类似扭矩)的车轮。
+为了减速，应用制动给(也可以想出一种类似扭矩)车轮`i`添加力。
 该索引是根据车轮被添加到车辆的顺序来确定的。
 ```
 vehicle.setBrake(breakingForce, i);
@@ -173,20 +173,19 @@ vehicle.setBrake(breakingForce, i);
 
 刹车将导致车辆最终在0停止，而负发动机的力量将开始逆转。
 
-### Steering
+### 转向
 
-Steer value is between 0 to 1 and apply to the wheel responding to wheel (i)
-The index is based on the order that the wheel is added to the vehicle
-vehicle.setSteeringValue(vehicleSteering, i);
+转向值在0到1之间，并适用于车轮响应的车轮`i`。
+该索引是根据车轮被添加到车辆的顺序来确定的。
 
 ```
 vehicle.setSteeringValue(vehicleSteering, i);
 ```
 
-#### Front and Back Wheel
+#### 前后轮
 
-*This is an optional suggestion*
-The template used direct numbering to map the wheel, but if the goal is front wheel will be the only one rotated, one way is to use the `m_bIsFrontWheel` variable
+*这是一个可选的建议。*
+模板使用直接编号来映射车轮，但是如果目标是前轮将是唯一旋转的，一种方法是使用`m_bIsFrontWheel`变量。
 ```
 if (wheelInfo.m_bIsFrontWheel)
 {
@@ -201,12 +200,12 @@ else
 }
 ```
 
-### Update Graphics with Physics Simulation
+### 用物理模拟更新图形
 
-Above Acceleration/Steering change the physics world vehicle location
-But need to apply this feedback to the graphics
+以上加速/转向改变物理世界车辆位置。
+但是需要将这种反馈应用于图形
 
-Following loop through all wheels, apply necessary steer/accelerate, and use the physics location/rotation to update graphics location/rotation
+跟踪所有车轮，应用必要的转向/加速，并使用物理位置/旋转来更新图形位置/旋转。
 
 ```
 for (i in 0...vehicle.getNumWheels()) {
@@ -226,7 +225,7 @@ for (i in 0...vehicle.getNumWheels()) {
 }
 ```
 
-Also applies to chassis and camera
+也适用于底盘和相机。
 
 ```
 var trans = carChassis.getWorldTransform();
@@ -244,29 +243,29 @@ if (camera.parent != null)
 camera.buildMatrix();
 ```
 
-#### Vehicle Wheels/Chassis Are Off During High Speed
-*This is an optional suggestion*
+#### 车轮/底盘在高速期间关闭
 
-Out of box vehicle template, if one moves the vehicle at very high speed, one may notice wheels are rotating slower than chassis (at least graphically).
+*这是一个可选的建议。*
 
-While it may works for some game, but may not work for other games.
+开箱即用的车辆模板，如果一个人以非常高的速度移动车辆，人们可能会注意到车轮的转动速度比底盘慢(至少是图形化的)。
 
-The reason that the behavior occurs is because physic wheel physic calculation logic seem happen on another thread, so there is some delay between the actual wheel rotation/location responds vs chassis physic calculation.
+虽然它可能适用于某些游戏，但可能不适用于其他游戏。
 
-To force the wheels, one logic need to be changed above
+造成这种现象的原因是由于物理轮物理计算逻辑似乎发生在另一个线程上，因此实际车轮转动/位置响应与底盘物理计算之间存在一定的延迟。
 
-On updateWheelTransform, updated to false for the wheel(i)
+为了强制车轮，需要改变上面的一个逻辑
+
+`On updateWheelTransform`为车轮`i`更新为假。
 
 ```
-// Synchronize the wheels with the chassis worldtransform
+// 使车轮与底盘世界Transform同步
 // update the second parameters to false to let the wheel stay at chasis
  vehicle.updateWheelTransform(i, false);
 ```
 
-There is also more elegant call back implementation approach, but as of this written, HaxeBullet does not support custom call back method for vehicle wheel yet.
+还有更优雅的回调实现方法，但在本文编写时，HaxeBullet还不支持车辆车轮的自定义回调方法。
 
-
-That's it - feel free to experiment further! Get the full blend for this tutorial:
+就这样-你可以自由地做进一步的实验了！获得本教程的全部Blend内容：
 
 - https://github.com/armory3d/armory_templates
 
