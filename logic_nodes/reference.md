@@ -2,28 +2,28 @@
 
 ## 逻辑
 
-### Alternate
+### 交替
 
 当它被重新激活时，在其激活的输出之间交替通过它的输入.
 
 ![](/assets/Alternate.JPG)
 
 
-### Array loop
+### 数组循环
 
 它循环遍历数组中分配的每个项。`Value`给出由索引值指定的项。`Done`在遍历数组时调用连接器。
 
 ![](/assets/array-loop.JPG)
 
 
-### Branch
+### 分支
 
 激活时，根据插入布尔值的状态，激活其`Ture`或`False`输出。
 
 ![](/assets/Branch.JPG)
 
 
-### Gate
+### 闸门
 
 逻辑节点执行`if`语句的方法。激活时，它将比较它的两个输入是相等的、大的相等的、小于等于的还是不相等的，而不管变量类型如何，如果SET状态是这样的话，则通过红色输入。
 
@@ -32,91 +32,91 @@
 ![](/assets/Gate.JPG)
 
 
-### Inverse
+### 相反
 
 布尔会变成对立面，真会变假，假会变成真。
 
 ![](/assets/Inverse.JPG)
 
 
-### Is True/False
+### 是真或假
 
 根据节点的说法，只有当插入的布尔值为`True`或`False`时，才能通过它的激活。
 
 ![](/assets/Is-true_false.JPG)
 
 
-### Is None
+### 是空值
 
 给出NULL的布尔值，也就是说，如果它是NULL，那么它的输出为`True`(没有值)，如果它不是NULL，那么它输出`False`(有值)。
 
 ![](/assets/is-none.JPG)
 
 
-### Is Not None
+### 不是空值
 
 给出相反的NULL值，即如果它不是NULL，那么它的输出为`True`(有值)，如果它是NULL，那么它输出`False`(没有值)。
 
 ![](/assets/is-not-none.JPG)
 
 
-### Loop
+### 循环
 
 它是基本的(i in from...to)循环。`Index`给出由索引值指定的值。`Done`在循环完成时被调用。
 
 ![](/assets/Loop.JPG)
 
 
-### Loop Break
+### 循环终止
 
 Loop Break终止包含它的循环。 
 
 ![](/assets/loop-break.JPG)
 
 
-### Merge
+### 合并
 
 “New”按钮创建新输入，“X”按钮删除最底层的输入。如果它从任何一个输入接收激活，它将激活它的输出。
 
 ![](/assets/Merge.JPG)
 
 
-### Not
+### 否定
 
 反转插入的布尔值，因此如果输入为`True`，则输出`False`。
 
 ![](/assets/Not.JPG)
 
 
-### Sequence
+### 序列
 
 其调用输出按顺序排列。
 
 ![](/assets/Sequence.JPG)
 
 
-### Switch
+### 切换
 
 检查输入`in`上的值，当输入值与`case 1、case 2`或`case 3`值匹配时，它将触发相应的`case 1、case 2`或`case 3`。单击`New`以添加更多的`Case`。
 
 ![](/assets/Switch.JPG)
 
 
-### To Bool
+### 转成布尔
 
 在输入中没有事件时为`False`，当输入上有事件时为`True`。
 
 ![](/assets/to-bool.JPG)
 
 
-### While
+### 在……期间
 
 它的循环只要在`Condition`中指定的bool是相同的(i.e., like  while(jumping == true){do domething})。
 
 ![](/assets/While.JPG)
 
 
-### Sleep
+### 休眠
 
 在它被激活后的秒内激活节点与其输出连接后的浮点值。
 
@@ -125,35 +125,35 @@ Loop Break终止包含它的循环。
 
 ## 事件
 
-### On Event
+### 事件
 
 激活连接到其他节点树中指定的`Sent Event`或`Sent Global Event`的节点。
 
 ![](/assets/on-event.JPG)
 
 
-### On Init
+### 初始化
 
 激活在游戏的第一帧上连接到它的节点。
 
 ![](/assets/On-Init.JPG)
 
 
-### On Timer
+### 计时器
 
 从游戏开始时，在计时器倒计时之后，激活连接到的节点，当方框打勾时重复。
 
 ![](/assets/On-Timer.JPG)
 
 
-### On Update
+### 每帧更新
 
 激活每个帧连接到它的节点。
 
 ![](/assets/On-Update.JPG)
 
 
-### On Volume Trigger
+### 体积触发器
 
 下面的对象输入至Volume，上面的对象输入作为和它进入/离开/重叠的物体。 
 
@@ -169,14 +169,14 @@ Loop Break终止包含它的循环。
 ## 触发器
 
 
-### On Mouse
+### 鼠标
 
 根据设置的不同，启动、按住或释放设置鼠标按钮时，激活连接到它的节点。
 
 ![](/assets/On-Mouse.JPG)
 
 
-### On Keyboard
+### 键盘
 
 启动、按住或释放设置键盘按钮时，激活连接到它的节点，具体取决于设置。
 
@@ -184,302 +184,299 @@ Loop Break终止包含它的循环。
 
 
 
-## States
+## 状态
 
-### Mouse
+### 鼠标
 
-Outputs a bool if the set button is being currently started, hold down, released, moved \(true\) or not \(false\).
+如果设置按钮当前正在启动，则输出布尔，按住、释放、移动（True）或不移动（False)。
 
 ![](/assets/Mouse.JPG)
 
 
-### Mouse Cords
+### 鼠标坐标
 
-Outputs the X, Y location of the mouse of screen and its movement as Vector, and an integer if the scroll wheel es been moved up \(1\) or moved down \(-1\) this frame.
+将屏幕鼠标的X，Y位置及其运动输出为向量，如果滚动轮向上移动（1）或向下移动（-1），则输出整数。
 
 ![](/assets/Mouse-Cords.JPG)
 
 
-### Keyboard
+### 键盘
 
-Outputs a bool if the set button is being currently started, hold down, released, \(true\) or not \(false\).
+如果设置按钮当前正在启动，则输出布尔，按住，释放（True）或不释放（False）。
 
 ![](/assets/Keyboard.JPG)
 
 
-### Get Transform
+### 得到变换
 
-Outputs the current transform of the set object. An objects Transform consists out of Vectors for its global location, rotation, and scale.
+输出设置对象的当前变换。对象变换由想量组成，用于全局定位、旋转和缩放。
 
 ![](/assets/get-transform.JPG)
 
 
-### Get Location
+### 得到位置
 
-Outputs the current global location of the set object as vector.
+将设置对象的当前全局位置作为向量输出。
 
 ![](/assets/get-location.JPG)
 
 
-### Get Rotation
+### 得到旋转
 
-Outputs the current rotation of the set Object as a Vector.
+将设置对象的当前旋转输出为向量。
 
 ![](/assets/get-rotation.JPG)
 
 
-### Get Scale
+### 得到缩放
 
-Outputs the current scale of the set object as vector.
+将设置对象的当前标度作为向量输出。
 
 ![](/assets/get-scale.JPG)
 
 
-### Get Object
+### 得到物体
 
-Searches for an object with the set name in the scene and outputs it.
+搜索场景中具有设置名称的对象并输出它。
 
 ![](/assets/get-object.JPG)
 
 
-### Get Visible
+### 得到可见性
 
-Outputs a Boolean Value according to the objects current visibility setting in the Outliner. False if invisible, True if visible, even if the Object is not on camera right now.
+根据当前可见性设置输出一个布尔值。如果是不可见的，则为假，如果可见，则为真，即使该物体现在不在摄像机上。
 
 ![](/assets/get-visible.JPG)
 
 
-### Get Child
+### 得到子类
 
-Searches for object with the set name that is currently a child of the set object and outputs it.
+使用当前为设置对象的子对象的设置名称搜索对象并输出该对象。
 
 ![](/assets/get-child.JPG)
 
 
-### Get Children
+### 得到所有子类
 
-Outputs all current children of the set object as array of objects.
+将设置对象的所有当前子对象输出为对象数组。
 
 ![](/assets/get-children.JPG)
 
 
-### Get Parent
+### 得到父类
 
-Outputs the current closest parent of the set object.
+输出设置对象的当前最近父级。
 
 ![](/assets/get-parent.JPG)
 
 
-### Get Group
+### 得到群组
 
-Searches for a group of objects with the set name and outputs it as an array of objects.
+搜索一组具有设置名称的对象，并将其作为对象数组输出。
 
 ![](/assets/get-group.JPG)
 
 
-### Group
+### 群组
 
-Outputs all objects in the set group as array.
+以数组的形式输出集合组中的所有对象。
 
 ![](/assets/group.JPG) 
 
 
-### Get Distance
+### 得到距离
 
-Outputs the current distance between the two set objects as float.
+将两个集合对象之间的当前距离作为浮点类型输出。
 
 ![](/assets/get-distance.JPG)
 
 
-### Get Trait
+### 得到特性
 
-Searches for a Trait with the set name which is applied on the set object and outputs it.
+搜索具有设置名称的特性，该属性应用于设置对象并输出它。
 
 ![](/assets/get-trait.JPG)
 
 
-### Active Camera
+### 得到已激活相机
 
 Outputs the current active Camera in your game as object.
 
 ![](/assets/active-camera.JPG)
 
 
-### Active Scene
+### 得到已激活场景
 
 Outputs the currently active scene in your game.
 
 ![](/assets/active-scene.JPG)
 
 
-### Volume Trigger
+### 得到体积触发器状态
 
-The lower object-input is used as Volume, the upper one as object-input for the object that enters/leaves/overlaps with it.
+较低的对象-输入为体积，上部的作为对象-输入，进入/离开/与之重叠的对象。
 
-Enter-mode: Outputs true on the frame the object enters the volume, on all other frames it outputs false.
+进入模式：在对象进入体积的帧上输出True，在所有其他帧上输出False。
 
-Leave-mode: Outputs true on the frame the object leaves the volume, on all other frames it outputs false.
+离开模式：在对象离开体积的帧上输出True，在所有其他帧上输出False。
 
-Overlap-mode: Outputs true on the frames the object overlaps with the volume, on all other frames it outputs false.
+重叠模式：在对象与体积重叠的帧上输出True，在所有其他帧上输出False。
 
 ![](/assets/Volume-trigger.JPG)
 
 
-## Values
+## 值
 
-### Get Property
+### 得到属性
 
-Can be used to receive Properties of other objects, which were set with the "[Set Property](/logic-nodes/set-property.md)" node. The properties name and object have to match the inputs of this node.
+可以用来接收其他对象的属性，这些对象是通过[`设置属性`](/logic-nodes/set-property.md)节点设置的。属性名称和对象必须与此节点的输入相匹配。
 
 ![](/assets/Get-property.JPG)
 
 
-## Variables
+## 变量
 
-### Action
+### 动作
 
-TBD
 
 ![](/assets/Action.JPG)
 
 
-### Boolean
+### 布尔
 
-Stores a Boolean value. A Boolean value has just two states: True and False.
+存储布尔值。布尔值只有两种状态：True和False。
 
 ![](/assets/boolean.JPG)
 
 
-### Colour
+### 颜色
 
-Store colour value in RGB/HSV/HEX format.
+存储RGB/HSV/HEX格式的颜色值。
  
 ![](/assets/Colour.JPG)
 
  
-### Dynamic
+### 动态
 
-TBD
  
 ![](/assets/Dynamic.JPG)  
 
 
-### Float
+### 浮点型
 
-Stores a Float value. A Float variable is a number with a limited number of decimals. If your number has more than 3 decimals, the value displayed will be rounded, but when you click on it you can still see the whole number, which will also be used in the game.
+存储浮点值。浮点变量是一个小数有限的数字。如果你的数字有超过3个小数，所显示的值将被四舍五入，但当你点击它时，你仍然可以看到整个数字，这也将在游戏中使用。
 
 ![](/assets/float.JPG)
 
 
-### Global Object
+### 全局对象
 
-Gives access to an global Object, which can be used to share information between different Traits.
+提供对全局对象的访问，该对象可用于在不同特性之间共享信息。
 
 ![](/assets/global-object.JPG)
 
 
-### Group
+### 群组
 
-Get value stored in a group (Under Object tab) in Array form.
+以数组形式获取存储在组(`物体`选项卡下)中的值。
 
 ![](/assets/Group.JPG)
 
 
-### Integer
+### 整型
 
-Stores an integer value. These are whole numbers.
+存储整数值。这些是整数。
 
 ![](/assets/Integer.JPG)
 
 
-### Material
+### 材质
 
-Get material of any object specified.
+获取任何指定对象的材质。
 
 ![](/assets/Material.JPG)
 
 
-### Mesh
+### 网格
 
-Get reference of mesh specified.
+获取指定网格的引用。
 
 ![](/assets/Mesh.JPG)
 
 
-### Object
+### 物体
 
-Get reference any object specified.
+获取指定物体的引用。
 
 ![](/assets/Object.JPG)
 
 
-### Quaternion
+### 四元数
 
-Store quaternion value.
+存储四元数值。
 
 ![](/assets/Quaternion.JPG)
 
 
-### Scene
+### 场景
 
-Get reference of scene specified.
+获取指定场景的引用。
 
 ![](/assets/Scene.JPG)
 
 
-### Scene Root
+### 根场景
 
-TBD
 
 ![](/assets/scene-root.JPG)
 
 
-### String
+### 字符串
 
-Store string value.
+存储字符串值。
 
 ![](/assets/String.JPG)
 
 
-### Trait
+### 特性
 
-Get reference of trait specified.
+获取制定特性的引用。
 
 ![](/assets/Trait.JPG)
 
 
-### Transform
+### 变换
 
-Store Location, Rotation, Scale value in vector form.
+以变量形式存储位置、旋转、缩放值。
 
 ![](/assets/Transform.JPG)
 
 
-### Vector
+### 向量
 
-Store X, Y, Z value in vector.
+将X，Y，Z值存储在向量中。
 
 ![](/assets/Vector.JPG)
 
 
-## Actions
+## 动作
 
-### Set Variable
+### 设置变量
 
-When activated, updates the first plugged in Variable to the Value of the second. Automatically converts some variable types.
+激活后，将插入的第一个变量更新为第二个变量的值。自动转换某些变量类型。
 
 ![](/assets/set-variable.JPG)
 
 
-### Translate Object
+### 移动物体
 
-Moves the set object every frame it is activated by the given Vector.
+根据给定的向量每帧移动设置的物体。
 
 ![](/assets/translate-object.JPG)
 
-### Set Property
+### 设置属性
 
-When activated, sets or updates a Property of the given object named after its string input to the Value of its general Variable input \(the green one\). You do not have to worry about the variable type, you can plug everything it apart from activations. 
+激活时，将以其字符串输入命名的给定对象的属性设置或更新为其常规变量INPUT\(绿色输入)的值。您不必担心变量类型，您可以插入除激活之外的所有内容。
 
 This node can be used to share Variables between different Traits. If the trait\(s\) you want to access the variable with are on different objects, use the "[Global Object](/logic-nodes/global-object.md)" node to store the data. Every trait can access this one.
 
