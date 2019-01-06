@@ -51,6 +51,6 @@
 
 ![](/getting_started/img/tanks/10.jpg)
 
-就这样-你可以自由地做进一步的实验了！获得本教程的全部混合内容：
+就这样-你可以自由地做进一步的实验了！获得本教程的全部Blend内容：
 
 - https://github.com/armory3d/armory_tutorials/tree/master/tanks
